@@ -28,18 +28,33 @@
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <!-- NAV -->
+  <!-- NAV (mobile + desktop) -->
   <nav class="sticky top-0 z-50 glass border-b border-slate-800">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center gap-4">
       <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
         <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
         Two-Man Tournament
       </a>
-      <div class="ml-auto hidden md:flex gap-6 text-sm">
+
+      <div class="ml-auto hidden md:flex gap-6 text-sm items-center">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="teams.html">Teams</a>
         <a class="link" href="leaderboard.html">Leaderboard</a>
         <a class="link active" href="schedule.html">Match Play Schedule</a>
+      </div>
+
+      <button id="menuBtn" class="ml-auto md:hidden inline-flex items-center justify-center rounded-lg border border-slate-700 px-3 py-2" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex flex-col gap-2 text-sm">
+        <a class="link block py-2" href="index.html">Home</a>
+        <a class="link block py-2" href="teams.html">Teams</a>
+        <a class="link block py-2" href="leaderboard.html">Leaderboard</a>
+        <a class="link block py-2 active" href="schedule.html">Match Play Schedule</a>
       </div>
     </div>
   </nav>
@@ -51,8 +66,8 @@
     </div>
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
     <div class="mx-auto max-w-7xl px-6 py-48 text-center">
-      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Match Play Schedule</h1>
-      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight">Match Play Schedule</h1>
+      <p class="mt-4 sm:mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
         Round-robin schedule — each team will face all opponents at least once.
       </p>
     </div>
@@ -73,7 +88,6 @@
 
   <!-- SCHEDULE -->
   <main class="mx-auto max-w-7xl px-6 py-16">
-
     <!-- Round 1 -->
     <section id="round1" class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
       <div class="flex items-baseline justify-between mb-6">
@@ -181,6 +195,16 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn && menu) btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Round switcher
     function showRound(num) {
       for (let i = 1; i <= 7; i++) {
         document.getElementById('round'+i).classList.add('hidden');
@@ -188,11 +212,11 @@
       }
       document.getElementById('round'+num).classList.remove('hidden');
       document.getElementById('btn-round'+num).classList.add('active-tab');
-      // Smooth scroll to top of current round
       const section = document.getElementById('round'+num);
       const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
+    window.showRound = showRound; // make available to buttons
   </script>
 </body>
 </html>
