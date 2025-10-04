@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Two-Man Golf Tournament</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{ --accent:#84cc16; }
+    body{ font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans"; }
+    .card{ border-radius: 1.25rem; box-shadow: 0 18px 50px rgba(2,6,23,.35); }
+    .glass{ backdrop-filter: blur(12px); background-color: rgba(2,6,23,.62) }
+    .link{ position:relative }
+    .link:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .18s}
+    .link:hover:after{width:100%}
+    .active{ color: var(--accent); font-weight:600; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 glass border-b border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+      <!-- LOGO + TITLE -->
+      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
+        <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
+        Two-Man Tournament
+      </a>
+
+      <!-- NAV LINKS -->
+      <div class="ml-auto hidden md:flex gap-6 text-sm">
+        <a class="link active" href="index.html">Home</a>
+        <a class="link" href="teams.html">Teams</a>
+        <a class="link" href="leaderboard.html">Leaderboard</a>
+        <a class="link" href="schedule.html">Match Play Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-20">
+      <img alt="Golf course" src="./banner.png" class="w-full h-full object-cover object-center"/>
+    </div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
+    <div class="mx-auto max-w-7xl px-6 py-48 text-center">
+      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Two-Man Golf Tournament</h1>
+      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+        A head-to-head round-robin event featuring eight teams battling for the title.
+      </p>
+    </div>
+  </header>
+
+  <!-- FEATURED SECTIONS -->
+  <main class="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-3 gap-8">
+    <a href="teams.html" class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8 hover:border-lime-400/60 transition">
+      <h2 class="text-2xl font-bold mb-3">Teams</h2>
+      <p class="text-slate-300">Meet the eight two-player teams with their unique colors and logos.</p>
+    </a>
+    <a href="leaderboard.html" class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8 hover:border-lime-400/60 transition">
+      <h2 class="text-2xl font-bold mb-3">Leaderboard</h2>
+      <p class="text-slate-300">Live standings — one point for each win. Updated throughout the tournament.</p>
+    </a>
+    <a href="schedule.html" class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8 hover:border-lime-400/60 transition">
+      <h2 class="text-2xl font-bold mb-3">Match Play Schedule</h2>
+      <p class="text-slate-300">Round-robin schedule — every team plays each other at least once.</p>
+    </a>
+  </main>
+
+  <footer class="border-t border-slate-800 text-center text-sm text-slate-400 py-10">
+    © <span id="year"></span> Two-Man Tournament
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

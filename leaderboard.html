@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leaderboard – Two-Man Tournament</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{ --accent:#84cc16; }
+    body{ font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans"; }
+    .card{ border-radius: 1.25rem; box-shadow: 0 18px 50px rgba(2,6,23,.35); }
+    .glass{ backdrop-filter: blur(12px); background-color: rgba(2,6,23,.62) }
+    .link{ position:relative }
+    .link:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .18s}
+    .link:hover:after{width:100%}
+    .active{ color: var(--accent); font-weight:600; }
+    th, td { padding: 0.75rem 1rem; }
+    th { text-align: left; font-weight: 600; color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { font-size: 1rem; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 glass border-b border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
+        <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
+        Two-Man Tournament
+      </a>
+      <div class="ml-auto hidden md:flex gap-6 text-sm">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="teams.html">Teams</a>
+        <a class="link active" href="leaderboard.html">Leaderboard</a>
+        <a class="link" href="schedule.html">Match Play Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-20">
+      <img alt="Golf course" src="./banner.png" class="w-full h-full object-cover object-center"/>
+    </div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
+    <div class="mx-auto max-w-7xl px-6 py-48 text-center">
+      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Leaderboard</h1>
+      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+        Standings update as results are recorded — 1 point per win, 0 for a loss.
+      </p>
+    </div>
+  </header>
+
+  <!-- LEADERBOARD TABLE -->
+  <main class="mx-auto max-w-5xl px-6 py-16">
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b border-slate-800">
+            <th class="w-12">#</th>
+            <th>Team</th>
+            <th class="text-center">Played</th>
+            <th class="text-center">Wins</th>
+            <th class="text-center">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>1</td>
+            <td class="font-semibold">Team 1</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>2</td>
+            <td class="font-semibold">Team 2</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>3</td>
+            <td class="font-semibold">Team 3</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>4</td>
+            <td class="font-semibold">Team 4</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>5</td>
+            <td class="font-semibold">Team 5</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>6</td>
+            <td class="font-semibold">Team 6</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="border-b border-slate-800 hover:bg-slate-800/40">
+            <td>7</td>
+            <td class="font-semibold">Team 7</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+          <tr class="hover:bg-slate-800/40">
+            <td>8</td>
+            <td class="font-semibold">Team 8</td>
+            <td class="text-center">0</td>
+            <td class="text-center">0</td>
+            <td class="text-center font-bold">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 text-center text-sm text-slate-400 py-10">
+    © <span id="year"></span> Two-Man Tournament
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

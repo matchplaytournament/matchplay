@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Match Play Schedule – Two-Man Tournament</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{ --accent:#84cc16; }
+    body{ font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans"; }
+    .card{ border-radius: 1.25rem; box-shadow: 0 18px 50px rgba(2,6,23,.35); }
+    .glass{ backdrop-filter: blur(12px); background-color: rgba(2,6,23,.62) }
+    .link{ position:relative }
+    .link:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .18s}
+    .link:hover:after{width:100%}
+    .active{ color: var(--accent); font-weight:600; }
+    .round-nav{ position:sticky; top:65px; z-index:40; background:rgba(2,6,23,.9); backdrop-filter:blur(6px); }
+    .match-row{ display:flex; align-items:center; justify-content:center; gap:.75rem; padding:1rem 1.25rem; background-color:rgba(15,23,42,0.6); border:1px solid #1e293b; border-radius:0.85rem; transition:.2s; }
+    .match-row:hover{ border-color:rgba(132,204,22,.6); }
+    .team{ font-weight:600; font-size:1.05rem; }
+    .vs{ color:#94a3b8; font-size:.9rem; }
+    .hidden{ display:none; }
+    .active-tab{ background-color:#a3e635 !important; color:#0f172a !important; font-weight:600; }
+    .meta{ font-size:.8rem; color:#94a3b8 }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 glass border-b border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
+        <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
+        Two-Man Tournament
+      </a>
+      <div class="ml-auto hidden md:flex gap-6 text-sm">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="teams.html">Teams</a>
+        <a class="link" href="leaderboard.html">Leaderboard</a>
+        <a class="link active" href="schedule.html">Match Play Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-20">
+      <img alt="Golf course" src="./banner.png" class="w-full h-full object-cover object-center"/>
+    </div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
+    <div class="mx-auto max-w-7xl px-6 py-48 text-center">
+      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Match Play Schedule</h1>
+      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+        Round-robin schedule — each team will face all opponents at least once.
+      </p>
+    </div>
+  </header>
+
+  <!-- ROUND NAV -->
+  <div class="round-nav border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap justify-center gap-3 text-sm">
+      <button onclick="showRound(1)" id="btn-round1" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition active-tab">Round 1</button>
+      <button onclick="showRound(2)" id="btn-round2" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 2</button>
+      <button onclick="showRound(3)" id="btn-round3" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 3</button>
+      <button onclick="showRound(4)" id="btn-round4" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 4</button>
+      <button onclick="showRound(5)" id="btn-round5" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 5</button>
+      <button onclick="showRound(6)" id="btn-round6" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 6</button>
+      <button onclick="showRound(7)" id="btn-round7" class="px-3 py-1 rounded-full bg-slate-800/70 hover:bg-lime-400 hover:text-slate-900 transition">Round 7</button>
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <main class="mx-auto max-w-7xl px-6 py-16">
+
+    <!-- Round 1 -->
+    <section id="round1" class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 1</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 2 -->
+    <section id="round2" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 2</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 3 -->
+    <section id="round3" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 3</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 4 -->
+    <section id="round4" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 4</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 5 -->
+    <section id="round5" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 5</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 6 -->
+    <section id="round6" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 6</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+    <!-- Round 7 -->
+    <section id="round7" class="hidden card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="font-bold text-2xl tracking-tight">Round 7</h2>
+        <span class="meta">Date: TBA</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+        <div class="match-row"><span class="team">TBA</span><span class="vs">vs</span><span class="team">TBA</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 text-center text-sm text-slate-400 py-10">
+    © <span id="year"></span> Two-Man Tournament
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function showRound(num) {
+      for (let i = 1; i <= 7; i++) {
+        document.getElementById('round'+i).classList.add('hidden');
+        document.getElementById('btn-round'+i).classList.remove('active-tab');
+      }
+      document.getElementById('round'+num).classList.remove('hidden');
+      document.getElementById('btn-round'+num).classList.add('active-tab');
+      // Smooth scroll to top of current round
+      const section = document.getElementById('round'+num);
+      const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

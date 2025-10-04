@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teams – Two-Man Tournament</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{ --accent:#84cc16; }
+    body{ font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans"; }
+    .card{ border-radius: 1.25rem; box-shadow: 0 18px 50px rgba(2,6,23,.35); }
+    .glass{ backdrop-filter: blur(12px); background-color: rgba(2,6,23,.62) }
+    .link{ position:relative }
+    .link:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .18s}
+    .link:hover:after{width:100%}
+    .active{ color: var(--accent); font-weight:600; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 glass border-b border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
+        <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
+        Two-Man Tournament
+      </a>
+      <div class="ml-auto hidden md:flex gap-6 text-sm">
+        <a class="link" href="index.html">Home</a>
+        <a class="link active" href="teams.html">Teams</a>
+        <a class="link" href="leaderboard.html">Leaderboard</a>
+        <a class="link" href="schedule.html">Match Play Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-20">
+      <img alt="Golf course" src="./banner.png" class="w-full h-full object-cover object-center"/>
+    </div>
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
+    <div class="mx-auto max-w-7xl px-6 py-48 text-center">
+      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Tournament Teams</h1>
+      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+        Eight two-player teams — each with their own identity, colors, and logos.
+      </p>
+    </div>
+  </header>
+
+  <!-- TEAMS GRID -->
+  <main class="mx-auto max-w-7xl px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Team 1 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-lime-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 1</h3>
+      <p class="text-slate-400 text-sm">Player A & Player B</p>
+    </div>
+    <!-- Team 2 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-blue-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 2</h3>
+      <p class="text-slate-400 text-sm">Player C & Player D</p>
+    </div>
+    <!-- Team 3 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-red-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 3</h3>
+      <p class="text-slate-400 text-sm">Player E & Player F</p>
+    </div>
+    <!-- Team 4 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-purple-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 4</h3>
+      <p class="text-slate-400 text-sm">Player G & Player H</p>
+    </div>
+    <!-- Team 5 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-yellow-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 5</h3>
+      <p class="text-slate-400 text-sm">Player I & Player J</p>
+    </div>
+    <!-- Team 6 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-pink-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 6</h3>
+      <p class="text-slate-400 text-sm">Player K & Player L</p>
+    </div>
+    <!-- Team 7 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-teal-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 7</h3>
+      <p class="text-slate-400 text-sm">Player M & Player N</p>
+    </div>
+    <!-- Team 8 -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-orange-400/80 mb-4"></div>
+      <h3 class="font-bold text-xl mb-1">Team 8</h3>
+      <p class="text-slate-400 text-sm">Player O & Player P</p>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 text-center text-sm text-slate-400 py-10">
+    © <span id="year"></span> Two-Man Tournament
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
