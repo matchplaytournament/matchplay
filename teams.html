@@ -20,18 +20,33 @@
 </head>
 <body class="bg-slate-950 text-slate-100">
 
-  <!-- NAV -->
+  <!-- NAV (mobile + desktop) -->
   <nav class="sticky top-0 z-50 glass border-b border-slate-800">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center gap-6">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center gap-4">
       <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-tight">
         <img src="logo.png" alt="Tournament Logo" class="w-10 h-10 object-contain rounded-md" />
         Two-Man Tournament
       </a>
-      <div class="ml-auto hidden md:flex gap-6 text-sm">
+
+      <div class="ml-auto hidden md:flex gap-6 text-sm items-center">
         <a class="link" href="index.html">Home</a>
         <a class="link active" href="teams.html">Teams</a>
         <a class="link" href="leaderboard.html">Leaderboard</a>
         <a class="link" href="schedule.html">Match Play Schedule</a>
+      </div>
+
+      <button id="menuBtn" class="ml-auto md:hidden inline-flex items-center justify-center rounded-lg border border-slate-700 px-3 py-2" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex flex-col gap-2 text-sm">
+        <a class="link block py-2" href="index.html">Home</a>
+        <a class="link block py-2 active" href="teams.html">Teams</a>
+        <a class="link block py-2" href="leaderboard.html">Leaderboard</a>
+        <a class="link block py-2" href="schedule.html">Match Play Schedule</a>
       </div>
     </div>
   </nav>
@@ -43,8 +58,8 @@
     </div>
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_30%,rgba(2,6,23,0.7)_70%,rgba(2,6,23,0.95)_100%)]"></div>
     <div class="mx-auto max-w-7xl px-6 py-48 text-center">
-      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight">Tournament Teams</h1>
-      <p class="mt-6 text-slate-300 text-xl max-w-3xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight">Tournament Teams</h1>
+      <p class="mt-4 sm:mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
         Eight two-player teams — each with their own identity, colors, and logos.
       </p>
     </div>
@@ -52,54 +67,15 @@
 
   <!-- TEAMS GRID -->
   <main class="mx-auto max-w-7xl px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    <!-- Team 1 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-lime-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 1</h3>
-      <p class="text-slate-400 text-sm">Player A & Player B</p>
-    </div>
-    <!-- Team 2 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-blue-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 2</h3>
-      <p class="text-slate-400 text-sm">Player C & Player D</p>
-    </div>
-    <!-- Team 3 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-red-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 3</h3>
-      <p class="text-slate-400 text-sm">Player E & Player F</p>
-    </div>
-    <!-- Team 4 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-purple-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 4</h3>
-      <p class="text-slate-400 text-sm">Player G & Player H</p>
-    </div>
-    <!-- Team 5 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-yellow-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 5</h3>
-      <p class="text-slate-400 text-sm">Player I & Player J</p>
-    </div>
-    <!-- Team 6 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-pink-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 6</h3>
-      <p class="text-slate-400 text-sm">Player K & Player L</p>
-    </div>
-    <!-- Team 7 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-teal-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 7</h3>
-      <p class="text-slate-400 text-sm">Player M & Player N</p>
-    </div>
-    <!-- Team 8 -->
-    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center">
-      <div class="w-16 h-16 mx-auto rounded-full bg-orange-400/80 mb-4"></div>
-      <h3 class="font-bold text-xl mb-1">Team 8</h3>
-      <p class="text-slate-400 text-sm">Player O & Player P</p>
-    </div>
+    <!-- Team cards (placeholders) -->
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-lime-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 1</h3><p class="text-slate-400 text-sm">Player A & Player B</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-blue-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 2</h3><p class="text-slate-400 text-sm">Player C & Player D</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-red-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 3</h3><p class="text-slate-400 text-sm">Player E & Player F</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-purple-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 4</h3><p class="text-slate-400 text-sm">Player G & Player H</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-yellow-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 5</h3><p class="text-slate-400 text-sm">Player I & Player J</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-pink-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 6</h3><p class="text-slate-400 text-sm">Player K & Player L</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-teal-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 7</h3><p class="text-slate-400 text-sm">Player M & Player N</p></div>
+    <div class="card bg-gradient-to-b from-slate-900/70 to-slate-900/40 border border-slate-800 p-6 text-center"><div class="w-16 h-16 mx-auto rounded-full bg-orange-400/80 mb-4"></div><h3 class="font-bold text-xl mb-1">Team 8</h3><p class="text-slate-400 text-sm">Player O & Player P</p></div>
   </main>
 
   <footer class="border-t border-slate-800 text-center text-sm text-slate-400 py-10">
@@ -108,6 +84,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn && menu) btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
   </script>
 </body>
 </html>
